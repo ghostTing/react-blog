@@ -1,0 +1,170 @@
+html, body {
+  color: #878d99;
+  height: 100%;
+  font-size: 16px;
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
+}
+
+.fw {
+  font-weight: 500;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tl {
+  text-align: left;
+}
+
+.bg-fff {
+  background-color: #ffffff;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.dn {
+  display: none;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.poa {
+  position: absolute;
+}
+
+.por {
+  position: relative;
+}
+
+.vm {
+  vertical-align: middle;
+}
+
+.vt {
+  vertical-align: top;
+}
+
+.vb {
+  vertical-align: bottom;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ws-nowrap {
+  white-space: nowrap;
+}
+
+.curp {
+  cursor: pointer;
+}
+
+/*iconfont初始大小*/
+.iconfont {
+  font-size: 20px;
+}
+
+.m(@n, @i:5) when (@i =< @n) {
+  .m-@{i} {
+    margin: @i+0px;
+  }
+  .m(@n, (@i + 5));
+}
+
+.mt(@n, @i:5) when (@i =< @n) {
+  .mt-@{i} {
+    margin-top: @i+0px;
+  }
+  .mt(@n, (@i + 5));
+}
+
+.ml(@n, @i:5) when (@i =< @n) {
+  .ml-@{i} {
+    margin-left: @i+0px;
+  }
+  .ml(@n, (@i + 5));
+}
+
+.mr(@n, @i:5) when (@i =< @n) {
+  .mr-@{i} {
+    margin-right: @i+0px;
+  }
+  .mr(@n, (@i + 5));
+}
+
+.mb(@n, @i:5) when (@i =< @n) {
+  .mb-@{i} {
+    margin-bottom: @i+0px;
+  }
+  .mb(@n, (@i + 5));
+}
+
+.p(@n, @i:5) when (@i =< @n) {
+  .p-@{i} {
+    padding: @i+0px;
+  }
+  .p(@n, (@i + 5));
+}
+
+.pt(@n, @i:5) when (@i =< @n) {
+  .pt-@{i} {
+    padding-top: @i+0px;
+  }
+  .pt(@n, (@i + 5));
+}
+
+.pl(@n, @i:5) when (@i =< @n) {
+  .pl-@{i} {
+    padding-left: @i+0px;
+  }
+  .pl(@n, (@i + 5));
+}
+
+.pr(@n, @i:5) when (@i =< @n) {
+  .pr-@{i} {
+    padding-right: @i+0px;
+  }
+  .pr(@n, (@i + 5));
+}
+
+.pb(@n, @i:5) when (@i =< @n) {
+  .pb-@{i} {
+    padding-bottom: @i+0px;
+  }
+  .pb(@n, (@i + 5));
+}
+
+.p(100);
+.pt(100);
+.pl(100);
+.pr(100);
+.pb(100);
+.m(100);
+.mt(100);
+.ml(100);
+.mr(100);
+.mb(100);
+.fs(@n, @i:10) when (@i =< @n) {
+  .fs-@{i} {
+    font-size: @i+0px;
+  }
+  .fs(@n, (@i + 1));
+}
+.fs(24);
