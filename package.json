@@ -91,6 +91,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "less": "^3.0.1",
     "less-loader": "^4.0.6"
   }
