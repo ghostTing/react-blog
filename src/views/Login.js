@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LoginForm from '../components/LoginForm'
 import '../views-css/Login.less'
 
 class Login extends Component {
@@ -9,7 +10,11 @@ class Login extends Component {
 
   render() {
     return (
-      <div>login</div>
+      <div className="login">
+        <div className="login-form-wrap">
+          <LoginForm></LoginForm>
+        </div>
+      </div>
     )
   }
 }

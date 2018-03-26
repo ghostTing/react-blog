@@ -10,17 +10,15 @@ import {Menu, Icon} from 'antd';
 class Header extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-    }
+    this.state = {}
   }
-
+  
   handleClick = (e) => {
-    console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
   }
-
+  
   render() {
     return (
       <div className="header">
@@ -31,13 +29,13 @@ class Header extends Component {
           theme="dark"
         >
           <Menu.Item key="home">
-            <Link to="/home"><Icon type="home"/>HOME</Link>
+            <Link to="/blog/home"><Icon type="home"/>HOME</Link>
           </Menu.Item>
           <Menu.Item key="topic">
-            <Link to="/topic"><Icon type="tag-o" />TOPIC</Link>
+            <Link to="/blog/topic"><Icon type="tag-o"/>TOPIC</Link>
           </Menu.Item>
           <Menu.Item className="login-nav-item" key="login">
-            <Link to="/login"><Icon type="user" />LOG IN</Link>
+            <Link to="/"><Icon type="user"/>LOG IN</Link>
           </Menu.Item>
         </Menu>
       </div>
