@@ -1,21 +1,45 @@
-import React, {Component} from 'react';
-import {Form, Icon, Input, Button, Checkbox} from 'antd';
+import React, {Component} from 'react'
+import {Form, Icon, Input, Button, Checkbox} from 'antd'
 import './LoginForm.less'
 
-const FormItem = Form.Item;
+const FormItem = Form.Item
 
 class NormalLoginForm extends Component {
+  constructor(props, context) {
+    super(props)
+    this.state = {}
+  }
+  
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        /* 校验用户名 */
+        if (values.userName !== 'admin') {
+          this.props.form.setFields({
+            userName: {
+              value: values.userName,
+              errors: [new Error('User is not exist!')]
+            }
+          })
+          return
+          /* 校验密码 */
+        } else if (values.password !== 'admin') {
+          this.props.form.setFields({
+            password: {
+              value: values.password,
+              errors: [new Error('Password is not correct!')]
+            }
+          })
+          return
+        }
+        this.props.login(values.userName)
       }
-    });
+    })
   }
   
   render() {
-    const {getFieldDecorator} = this.props.form;
+    const {getFieldDecorator} = this.props.form
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
@@ -41,16 +65,16 @@ class NormalLoginForm extends Component {
             <Checkbox>Remember me</Checkbox>
           )}
           <a className="login-form-forgot" href="">Forgot password</a>
-          <Button type="primary" htmlType="submit" className="login-form-button">
+          <Button type="primary" htmlType="submit" className="login-form-button fr">
             Log in
           </Button>
-          Or <a href="">register now!</a>
         </FormItem>
       </Form>
-    );
+    )
   }
 }
 
-const LoginForm = Form.create()(NormalLoginForm);
+const LoginForm = Form.create()(NormalLoginForm)
+
 
 export default LoginForm

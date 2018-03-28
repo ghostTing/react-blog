@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 // import {Icon} from 'antd'
 import '../views-css/BlogList.less'
 import BlogItem from '../components/BlogItem'
 
 class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       blogList: [
         {
@@ -27,7 +27,7 @@ class Login extends Component {
           picture: '//upload-images.jianshu.io/upload_images/8470191-2de64d45e0355daa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/550'
         }
       ]
-    };
+    }
   }
   
   render() {
@@ -52,4 +52,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Login

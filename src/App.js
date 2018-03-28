@@ -3,6 +3,7 @@ import Router from './router'
 import './global-css/reset.less'
 import './global-css/common.less'
 import './App.css';
+import './global-css/theme.less'
 
 class App extends Component {
   render() {

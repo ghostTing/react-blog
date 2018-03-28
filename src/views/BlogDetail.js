@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 // import {Icon} from 'antd'
 import '../views-css/BlogDetail.less'
 
 class Login extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-    };
+    super(props)
+    this.state = {}
   }
   
   render() {
@@ -17,4 +16,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Login
