@@ -21,8 +21,11 @@ class Login extends Component {
   
   login(val) {
     this.props.saveUsername(val)
+    this.props.history.push('/blog/home')
   }
   
+  componentWillMount() {
+  }
   render() {
     return (
       <div className="login">

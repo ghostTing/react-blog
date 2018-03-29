@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import Router from './router'
-import './global-css/reset.less'
-import './global-css/common.less'
-import './App.css';
-import './global-css/theme.less'
+import './App.less';
 
 class App extends Component {
   render() {

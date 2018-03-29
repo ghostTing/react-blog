@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Form, Icon, Input, Button, Checkbox} from 'antd'
+import axios from 'axios'
 import './LoginForm.less'
 
 const FormItem = Form.Item
@@ -14,26 +15,30 @@ class NormalLoginForm extends Component {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        /* 校验用户名 */
-        if (values.userName !== 'admin') {
-          this.props.form.setFields({
-            userName: {
-              value: values.userName,
-              errors: [new Error('User is not exist!')]
-            }
-          })
-          return
-          /* 校验密码 */
-        } else if (values.password !== 'admin') {
-          this.props.form.setFields({
-            password: {
-              value: values.password,
-              errors: [new Error('Password is not correct!')]
-            }
-          })
-          return
-        }
-        this.props.login(values.userName)
+        axios.post('/user', {
+          username: values.userName,
+          password: values.password
+        }).then(data => {
+          if (data.data.code === 200) {
+            this.props.login(values.userName)
+          }else if (data.data.code === 501) {
+            /* 用户名不存在 */
+            this.props.form.setFields({
+              userName: {
+                value: values.userName,
+                errors: [new Error(data.data.message)]
+              }
+            })
+          } else if (data.data.code === 500) {
+            /* 密码错误 */
+            this.props.form.setFields({
+              password: {
+                value: values.password,
+                errors: [new Error(data.data.message)]
+              }
+            })
+          }
+        })
       }
     })
   }

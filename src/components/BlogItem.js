@@ -16,7 +16,7 @@ class BlogItem extends Component {
           {this.props.blogTitle}
         </header>
         <article className="blog-content mb-10">
-          <p className="blog-text">
+          <p className="blog-text c-black-65">
             {this.props.blogText}
           </p>
           <img className="blog-inset"

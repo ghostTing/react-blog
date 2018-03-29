@@ -1,4 +1,5 @@
 .blog-list {
+  position: relative;
   .main {
     width: 700px;
     .blog {
@@ -9,9 +10,77 @@
     }
     .blog-item{
       margin-bottom: 10px;
-      background-color: #fff;
       border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(26,26,26,.1)
+    }
+  }
+  .side-col {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
+    .about-me{
+      padding: 4px 10px;
+      .wechat-qrcode{
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .new-essay{
+      .new-essay-header{
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        font-size: 16px;
+        border-bottom: 1px solid #f6f6f6;
+        box-sizing: border-box;
+        color: rgba(0,0,0,.85);
+      }
+      .new-essay-list{
+      }
+      .new-essay-item {
+        padding: 5px 15px;
+        line-height: 1.8em;
+        cursor: pointer;
+      }
+      .new-essay-item:hover{
+        color: rgba(0,0,0,.85);
+      }
+      .view-icon{
+        font-size: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+    .label {
+      .label-header{
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        font-size: 16px;
+        border-bottom: 1px solid #f6f6f6;
+        box-sizing: border-box;
+        color: rgba(0,0,0,.85);
+      }
+      .label-list{
+      }
+      .label-item{
+        width: 33.333%;
+        text-align: center;
+        padding: 15px 0;
+        color: rgba(0,0,0,.65);
+        cursor: pointer;
+      }
+      .label-item:hover{
+        color: rgba(0,0,0,.85);
+      }
+      .label-icon{
+        font-size: 24px;
+        vertical-align: middle;
+        margin-bottom: 10px;
+      }
+      .label-name{
+        font-size: 12px;
+      }
     }
   }
 }
