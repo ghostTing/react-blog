@@ -34,6 +34,9 @@ class Header extends Component {
           <Menu.Item key="topic">
             <Link to="/blog/topic"><Icon type="tag-o"/>TOPIC</Link>
           </Menu.Item>
+          <Menu.Item key="create">
+            <Link to="/admin/create-blog"><Icon type="edit"/>CREATE BLOG</Link>
+          </Menu.Item>
           <Menu.Item className="login-nav-item" key="login">
             <Link to="/"><Icon type="user"/>LOG IN</Link>
           </Menu.Item>

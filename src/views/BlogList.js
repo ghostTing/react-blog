@@ -68,7 +68,9 @@ class Login extends Component {
       ]
     }
   }
-  
+  readDetail() {
+    this.props.history.push('/blog-detail')
+  }
   render() {
     return (
       <div className="blog-list">
@@ -77,7 +79,7 @@ class Login extends Component {
             {
               this.state.blogList.map((item, index) => {
                 return (
-                  <li className="blog-item card" key={item.id}>
+                  <li className="blog-item card" key={item.id} onClick={this.readDetail.bind(this)}>
                     <BlogItem blogTitle={item.title} blogText={item.text}
                               blogPicture={item.picture}></BlogItem>
                   </li>
