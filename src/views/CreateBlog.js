@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Upload, Icon} from 'antd'
+import {Upload, Icon, Button, Input} from 'antd'
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
 import '../views-css/CreateBlog.less'
@@ -40,7 +40,7 @@ class CreateBlog extends Component {
   render() {
     return (
       <div className="create-blog tc">
-        <div className="dragger-wrap">
+        <div className="rich-text-wrap card tl">
           <Dragger {...props}>
             <p className="ant-upload-drag-icon">
               <Icon type="inbox"/>
@@ -48,11 +48,17 @@ class CreateBlog extends Component {
             <p className="ant-upload-text">Click or drag a file to upload as a major image</p>
             <p className="ant-upload-hint">Only PNG, JPG, JPEG, GIF accepted</p>
           </Dragger>
-        </div>
-        <div className="rich-text-wrap card tl">
+          <div className="title-input-wrap">
+            <Input size="large" placeholder="Please enter the title of the essay" />
+          </div>
           <div id="editor">
             <p>Hello World!</p>
             <p>Some initial <strong>bold</strong> text</p>
+          </div>
+          <div className="btn-wrap">
+            <Button type="primary" htmlType="submit" className="submit-btn fr">
+              SUBMIT
+            </Button>
           </div>
         </div>
       </div>

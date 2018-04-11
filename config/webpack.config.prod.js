@@ -12,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const theme = require('./theme')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -152,7 +153,7 @@ module.exports = {
 
               compact: true,
               plugins: [
-                ['import', {'libraryName': 'antd', 'style': 'css'}] // `style: true` 会加载 less 文件
+                ['import', {'libraryName': 'antd', 'style': true}] // `style: true` 会加载 less 文件
               ]
             }
           },
@@ -209,7 +210,11 @@ module.exports = {
                       },
                     },
                     {
-                      loader: require.resolve('less-loader') // compiles Less to CSS
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                      options: {
+                        javascriptEnabled: true,
+                        modifyVars: theme
+                      }
                     }
                   ],
                 },
